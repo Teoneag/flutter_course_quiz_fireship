@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "354073681960",
+    "project_id": "quiz-fireship-course",
+    "storage_bucket": "quiz-fireship-course.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:354073681960:android:a5579719ffce52b543551d",
+        "android_client_info": {
+          "package_name": "com.teoneag.quiz_fireship_course"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLEorCVZxHpGAuLC7nJY11o9oiP4sJAw8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
