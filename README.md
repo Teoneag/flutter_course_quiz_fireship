@@ -55,6 +55,8 @@ Or you can use IntelliJ IDEA to run it. (open the project and run the App class)
 
 ## Features
 
+- used https://github.com/fireship-io/fireship-quizapp-data
+
 ## Task
 
 - 
@@ -62,7 +64,8 @@ Or you can use IntelliJ IDEA to run it. (open the project and run the App class)
 ## Plan -> Actual: 
 
 Chronological order. Planned time -> actual time
-- 
+- 9:07 -> 10:35 = 1h 28m: 0 -> Routing
+
 
 ## ToDo
 
