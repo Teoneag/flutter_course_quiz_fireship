@@ -50,14 +50,14 @@ class Topic {
   final String id;
   final String title;
   final String description;
-  final String imageUrl;
+  final String img;
   final List<Quiz> quizzes;
 
   Topic({
     this.id = '',
     this.title = '',
     this.description = '',
-    this.imageUrl = 'default.png',
+    this.img = 'default.png',
     this.quizzes = const [],
   });
 
