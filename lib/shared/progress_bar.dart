@@ -88,7 +88,10 @@ class TopicProgress extends StatelessWidget {
   double _calculateProgress(Topic topic, Report report) {
     try {
       int totalQuizzes = topic.quizzes.length;
+      print(report.topics);
+      print(topic.id);
       int completedQuizzes = report.topics[topic.id].length;
+      // here we get the null error
       return completedQuizzes / totalQuizzes;
     } catch (err) {
       return 0.0;

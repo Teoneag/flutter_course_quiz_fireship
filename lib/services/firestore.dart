@@ -19,11 +19,14 @@ class FirestoreService {
   }
 
   Stream<Report> streamReport() {
+    print('trying to stream report');
     return AuthService().userStream.switchMap((user) {
       if (user == null) return Stream.fromIterable([Report()]);
 
+      print('streaming report for ${user.uid}');
       var ref = _db.collection('reports').doc(user.uid);
       return ref.snapshots().map((doc) => Report.fromJson(doc.data()!));
+      // here null error
     });
   }
 

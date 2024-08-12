@@ -66,11 +66,6 @@ Or you can use IntelliJ IDEA to run it. (open the project and run the App class)
 Chronological order. Planned time -> actual time
 - 9:07 -> 10:35 = 1h 28m: 0 -> Routing
 
-
 ## ToDo
 
-- understand task + read resources, similar projects + make plan: 1h ->
-- project setup: 10m ->
-- test, fix & write tests 3h -> 
-- documentation: 30m ->
-  - GitHub description
+- fix the null pointer exceptions (user is null, but calculate progress is called)
