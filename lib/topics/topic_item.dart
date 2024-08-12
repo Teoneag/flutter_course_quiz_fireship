@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_fireship_course/topics/drawer.dart';
 
 import '../services/models.dart';
 
@@ -79,6 +80,7 @@ class TopicScreen extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
+          QuizList(topic: topic),
         ],
       ),
     );

@@ -1,8 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:quiz_fireship_course/services/firestore.dart';
 
 import 'firebase_options.dart';
 import 'routes.dart';
+import 'services/models.dart';
 import 'theme.dart';
 
 Future<void> main() async {
@@ -18,10 +21,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: appTheme,
-      routes: appRoutes,
+    return StreamProvider(
+      create: (_) => FirestoreService().streamReport(),
+      initialData: Report(),
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: appTheme,
+        routes: appRoutes,
+      ),
     );
   }
 }
@@ -38,7 +45,6 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text('Flutter Demo Home Page'),
       ),
       body: const Text('Hello, World!'),

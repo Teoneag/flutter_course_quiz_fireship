@@ -61,19 +61,17 @@ class LoginButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: ElevatedButton.icon(
-        label: Text(text),
-        onPressed: () => loginMethod(),
-        icon: Icon(
-          icon,
-          color: Colors.white,
-          size: 20,
-        ),
-        style: TextButton.styleFrom(
-          padding: const EdgeInsets.all(24),
-          backgroundColor: color,
-        ),
+    return ElevatedButton.icon(
+      label: Text(text),
+      onPressed: () => loginMethod(),
+      icon: Icon(
+        icon,
+        color: Colors.white,
+        size: 20,
+      ),
+      style: TextButton.styleFrom(
+        padding: const EdgeInsets.all(24),
+        backgroundColor: color,
       ),
     );
   }

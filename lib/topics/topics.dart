@@ -4,6 +4,7 @@ import 'package:quiz_fireship_course/shared/loading.dart';
 import '../services/firestore.dart';
 import '../shared/bottom_nav.dart';
 import '../shared/error.dart';
+import 'drawer.dart';
 import 'topic_item.dart';
 
 class TopicsScreen extends StatelessWidget {
@@ -24,6 +25,7 @@ class TopicsScreen extends StatelessWidget {
             appBar: AppBar(
               title: const Text('Topics'),
             ),
+            drawer: TopicDrawer(topics: topics),
             body: GridView.count(
               primary: false,
               padding: const EdgeInsets.all(20),
