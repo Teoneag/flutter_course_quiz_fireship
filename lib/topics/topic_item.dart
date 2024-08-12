@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_fireship_course/topics/drawer.dart';
 
 import '../services/models.dart';
+import '../shared/progress_bar.dart';
+import 'drawer.dart';
 
 class TopicItem extends StatelessWidget {
   final Topic topic;
@@ -11,46 +12,48 @@ class TopicItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Hero(
-        tag: topic.img,
-        child: Card(
-          clipBehavior: Clip.antiAlias,
-          child: InkWell(
-            onTap: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => TopicScreen(topic: topic),
-                ),
-              );
-            },
-            child: Column(
-              children: [
-                Flexible(
-                  flex: 3,
-                  child: SizedBox(
-                    child: Image.asset(
-                      'assets/covers/${topic.img}',
-                      fit: BoxFit.contain,
-                    ),
+      tag: topic.img,
+      child: Card(
+        clipBehavior: Clip.antiAlias,
+        child: InkWell(
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => TopicScreen(topic: topic),
+              ),
+            );
+          },
+          child: Column(
+            children: [
+              Flexible(
+                flex: 3,
+                child: SizedBox(
+                  child: Image.asset(
+                    'assets/covers/${topic.img}',
+                    fit: BoxFit.contain,
                   ),
                 ),
-                Flexible(
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 10, right: 10),
-                    child: Text(
-                      topic.title,
-                      style: const TextStyle(
-                        height: 1.5,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      overflow: TextOverflow.fade,
-                      softWrap: false,
+              ),
+              Flexible(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10, right: 10),
+                  child: Text(
+                    topic.title,
+                    style: const TextStyle(
+                      height: 1.5,
+                      fontWeight: FontWeight.bold,
                     ),
+                    overflow: TextOverflow.fade,
+                    softWrap: false,
                   ),
                 ),
-              ],
-            ),
+              ),
+              Flexible(child: TopicProgress(topic: topic)),
+            ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
 
