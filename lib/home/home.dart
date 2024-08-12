@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../shared/error.dart';
+import '../shared/loading.dart';
 import '/topics/topics.dart';
 import '../login/login.dart';
 import '../services/auth.dart';
@@ -13,10 +15,10 @@ class HomeScreen extends StatelessWidget {
       stream: AuthService().userStream,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Text('Loading...');
+          return const LoadingScreen();
         } else if (snapshot.hasError) {
           return const Center(
-            child: Text('Error loading user'),
+            child: ErrorMessage(),
           );
         } else if (snapshot.hasData) {
           return const TopicsScreen();
